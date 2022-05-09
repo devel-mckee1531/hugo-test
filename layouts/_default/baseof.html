@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="author" content="" />
+    <meta name="description" content="" />
+    <meta name="generator" content="Hugo" />
+    <meta name="keywords" content="" />
+    <meta name="referrer" content="same-origin" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>
+      {{ block "title" . }}{{ end }}
+    </title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li>
+            {{ .Site.Title }}
+          </li>
+          <li>
+            <span>TAG</span>
+            <ul>
+              {{ range .Site.Taxonomies.tags.Alphabetical }}
+                <li>
+                  <a href="{{ .Page.Permalink }}">
+                    {{ .Name }}
+                  </a>
+                </li>
+              {{ end }}
+            </ul>
+          </li>
+          <li>
+            <label for="searchInput">
+              SEARCH
+            </label>
+            <input type="text" id="searchInput" placeholder="キーワード検索" />
+          </li>
+          <li>
+            sns...
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      {{ block "main" . }}{{ end }}
+    </main>
+    <footer>
+      <figure>
+        <img src="img/company-logo.png" alt="company logo" />
+      </figure>
+      <address>
+        <p>
+          〒100-0004
+        </p>
+        <p>
+          東京都千代田区大手町1-6-1 大手町ビル3階
+        </p>
+        <p>
+          TEL.
+          <a href="">
+            03-6262-5381
+          </a>
+        </p>
+      </address>
+    </footer>
+  </body>
+</html>
