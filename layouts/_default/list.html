@@ -1,0 +1,33 @@
+<article>
+  <a href="{{ .Permalink }}">
+      <figure>
+        {{ with .Resources.GetMatch "featuredImage" -}}
+          <img src="{{ .Permalink }}" alt="{{ .Params.alt }}" />
+        {{- end }}
+      </figure>
+  </a>
+  <a href="{{ .Permalink }}">
+    <h3>
+      {{- .Title -}}
+    </h3>
+  </a>
+  <ul>
+    {{ range (.GetTerms "tags") -}}
+      <li>
+        <a href="{{ .Permalink }}">{{- .LinkTitle -}}</a>
+      </li>
+    {{- end }}
+  </ul>
+  <ul>
+    {{ range (.GetTerms "authors") -}}
+      <li>
+        <a href="{{ .Permalink }}">{{- .LinkTitle -}}</a>
+      </li>
+    {{- end }}
+  </ul>
+  <a href="{{ .Permalink }}">
+    <p>
+      {{- .Date.Format "2006.01.02" -}}
+    </p>
+  </a>
+</article>

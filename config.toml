@@ -6,3 +6,8 @@ contentDir = "content"
 [taxonomies]
 tag = "tags"
 author = "authors"
+
+[permalinks]
+articles = "/:title"
+tags = "/:slug/"
+authors = "/:slug/"
