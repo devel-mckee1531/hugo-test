@@ -1,0 +1,4 @@
+{{ with resources.Get "css/bundle.css" }}
+{{ $style := resources.Get . }}
+<link rel="stylesheet" href="{{ $style.Permalink }}" />
+{{ end }}

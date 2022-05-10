@@ -16,7 +16,7 @@
     Others
   </h2>
   {{ range .Site.RegularPages }}
-    {{ .Render "list" }}
+    {{ partial "common/ali.html" . }}
   {{ end }}
 </section>
 {{ end }}

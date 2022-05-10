@@ -1,13 +1,122 @@
-baseurl = "/"
-languageCode = "ja-jp"
-title = "Hugoサンプルサイト"
+baseurl = "http://localhost:1313/"
 contentDir = "content"
+copyright = "e2e inc"
+defaultContentLanguage = "ja"
+disableKinds = []
+enableEmoji = false
+enableInlineShortcodes = false
+enableRobotsTXT = true
+googleAnalytics = ""
+hasCJKLanguage = true
+languageCode = "ja-jp"
+paginate = 6
+theme = "techblog"
+title = "テックブログ？"
 
 [taxonomies]
-tag = "tags"
 author = "authors"
+tag = "tags"
 
 [permalinks]
-articles = "/:title"
-tags = "/:slug/"
-authors = "/:slug/"
+articles = "/:slug"
+authors = "/authors/:slug/"
+tags = "/tags/:slug/"
+
+[menu]
+  [[menu.footer]]
+    identifier = "privacy"
+    name = "プライバシーポリシー"
+    title = "This is our privacy policy page."
+    url = "https://e2e-inc.co.jp/privacypolicy/"
+    weight = -30
+  [[menu.footer]]
+    identifier = "companyInfo"
+    name = "会社情報"
+    title = "This is our company profile page."
+    url = "https://e2e-inc.co.jp/company/"
+    weight = -20
+  [[menu.footer]]
+    identifier = "services"
+    name = "提供サービス"
+    title = "提供サービス"
+    url = "https://e2e-inc.co.jp/service/"
+    weight = -10
+  [[menu.footer]]
+    identifier = "wpMake"
+    name = "wp.make"
+    title = "This is our wordpress development service."
+    url = "https://e2e-inc.co.jp/service/wp_make/"
+    weight = 10
+    parent = "services"
+  [[menu.footer]]
+    identifier = "wpSupport"
+    name = "wp.support"
+    title = "This is our wordpress support service."
+    url = "https://e2e-inc.co.jp/service/wp_support/"
+    weight = 20
+    parent = "services"
+  [[menu.footer]]
+    identifier = "wpRescue"
+    name = "wp.rescue"
+    title = "This is our wordpress rescue service."
+    url = "https://e2e-inc.co.jp/service/wp_rescue/"
+    weight = 30
+    parent = "services"
+  [[menu.footer]]
+    identifier = "wpVersionUp"
+    name = "wp.versionup"
+    title = "This is our wordpress version up service."
+    url = "https://e2e-inc.co.jp/service/wp_versionup/"
+    weight = 40
+    parent = "services"
+  [[menu.footer]]
+    identifier = "wpGeek"
+    name = "wp.geek"
+    title = "This is our wordpress blog."
+    url = "https://wpmake.jp/contents/"
+    weight = 50
+    parent = "services"
+  [[menu.footer]]
+    identifier = "recruit"
+    name = "採用情報"
+    title = "This is our recruit page."
+    url = "https://e2e-inc.co.jp/recruit/"
+    weight = 10
+  [[menu.footer]]
+    identifier = "contact"
+    name = "お問い合わせ"
+    title = "This is our contact page."
+    url = "https://e2e-inc.co.jp/contact/"
+    weight = 10
+
+[params]
+  [params.meta]
+    author = ""
+    description = "株式会社e2eのエンジニアのエンジニアによるエンジニアのためのBlog"
+    generator = ""
+    keywords = ""
+    robots = "noindex,nofollow"
+    facebookAppId = ""
+    twitterCard = "summary_large_image"
+  [params.address]
+    postal = "100-0004"
+    address = "東京都千代田区大手町1-6-1 大手町ビル3階"
+    telephone = "03-6262-5381"
+    email = ""
+    fax = ""
+  [[params.sns]]
+    identifier = "facebook"
+    url = "https://www.facebook.com/e2e.2020.02/"
+    image = "img/sns/facebook.png"
+  [[params.sns]]
+    identifier = "twitter"
+    url = "https://twitter.com/e2e_inc/"
+    image = "img/sns/twitter.png"
+  [[params.sns]]
+    identifier = "instagram"
+    url = "https://www.instagram.com/e2e.inc_official/"
+    image = "img/sns/instagram.png"
+  [[params.sns]]
+    identifier = "note"
+    url = "https://note.com/e2e_inc/"
+    image = "img/sns/note.png"

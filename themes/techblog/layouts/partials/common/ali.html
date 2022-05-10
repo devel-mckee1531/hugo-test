@@ -2,7 +2,8 @@
   <a href="{{ .Permalink }}">
       <figure>
         {{ with .Resources.GetMatch "featuredImage" -}}
-          <img src="{{ .Permalink }}" alt="{{ .Params.alt }}" />
+        {{ $image := .Resize "300x" }}
+          <img src="{{ $image.Permalink }}" alt="{{ .Params.alt }}" />
         {{- end }}
       </figure>
   </a>

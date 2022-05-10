@@ -1,0 +1,9 @@
+{{ define "main" }}
+  {{ partial "article/toc.html" . }}
+  <article>
+    <h1>
+      {{- .Title -}}
+    </h1>
+    {{ .Content }}
+  </article>
+{{ end }}

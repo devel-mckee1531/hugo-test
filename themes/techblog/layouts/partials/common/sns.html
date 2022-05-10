@@ -1,0 +1,12 @@
+<ul>
+  {{ range .Site.Params.sns }}
+    <li>
+      <a href="{{ .url }}" target="_blank">
+        {{ with resources.Get .image }}
+        {{ $image := .Resize "40x" }}
+        <img src="{{ $image.Permalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" />
+        {{ end }}
+      </a>
+    </li>
+  {{ end }}
+</ul>

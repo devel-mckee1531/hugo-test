@@ -1,0 +1,33 @@
+<address>
+{{ with .Site.Params.address.postal }}
+  <span>
+    〒{{ . }}
+  </span>
+{{ end }}
+{{ with .Site.Params.address.address }}
+  <span>
+    {{ . }}
+  </span>
+{{ end }}
+{{ with .Site.Params.address.telephone }}
+  <span>
+    TEL.
+    <a href="tel:+ {{ . }}">
+      {{ . }}
+    </a>
+  </span>
+{{ end }}
+{{ with .Site.Params.address.email }}
+  <span>
+    MAIL.
+    <a href="mailto:{{ . }}">
+      {{ . }}
+    </a>
+  </span>
+{{ end }}
+{{ with .Site.Params.address.fax }}
+  <span>
+    FAX. {{ . }}
+  </span>
+{{ end }}
+</address>

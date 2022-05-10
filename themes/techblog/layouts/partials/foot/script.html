@@ -1,0 +1,4 @@
+{{ with resources.Get "js/bundle.js" }}
+{{ $script := resources.Get . }}
+<script src="js/bundle.js"></script>
+{{ end }}

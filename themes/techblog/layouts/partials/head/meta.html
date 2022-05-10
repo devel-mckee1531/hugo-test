@@ -1,0 +1,50 @@
+<meta charset="utf-8" />
+{{ with .Site.Params.meta.author -}}
+<meta name="author" content="{{ . }}" />
+{{- end }}
+{{ with .Description -}}
+<meta name="description" content="{{ . }}" />
+{{- else -}}
+  {{ if and (isset .Site.Params.meta "description") (ne .Site.Params.meta.description "") -}}
+<meta name="description" content="{{ .Site.Params.meta.description }}" />
+  {{- end }}
+{{- end }}
+{{ with .Site.Params.meta.generator -}}
+<meta name="generator" content="{{ . }}" />
+{{- end }}
+{{ with .Site.Params.meta.keywords -}}
+<meta name="keywords" content="{{ . }}" />
+{{- end }}
+{{ with .Site.Params.meta.robots -}}
+<meta name="robots" content="{{ . }}" />
+{{- end }}
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<meta name="format-detection" content="telephone=no,address=no,email=no" />
+<meta name="referrer" content="same-origin" />
+{{- if .IsHome }}
+<meta property="og:title" content="{{ .Site.Title }}" />
+{{ else }}
+<meta property="og:title" content="{{ .Title }}" />
+{{ end -}}
+{{ with .Description -}}
+<meta property="og:description" content="{{ . }}" />
+{{- else -}}
+  {{ if and (isset .Site.Params.meta "description") (ne .Site.Params.meta.description "") -}}
+<meta property="og:description" content="{{ .Site.Params.meta.description }}" />
+  {{- end }}
+{{- end }}
+<meta property="og:site_name" content="{{ .Site.Title }}" />
+<meta property="og:url" content="{{ .Page.Permalink }}" />
+<meta property="og:" content="" />
+<meta property="og:locale" content="{{ .Site.LanguageCode }}" />
+{{- if .IsHome }}
+<meta property="og:type" content="blog" />
+{{ else }}
+<meta property="og:type" content="article" />
+{{ end -}}
+{{- with .Site.Params.meta.facebookAppId }}
+<meta property="fb:app_id" content="{{ . }}" />
+{{ end -}}
+{{- with .Site.Params.meta.twitterCard }}
+<meta property="twitter:card" content="{{ . }}" />
+{{ end -}}
